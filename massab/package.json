@@ -5,11 +5,11 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ali-coder449/visa.git"
+    "url": "git+https://github.com/Ali-coder449/site.git"
   },
-  "homepage": "https://ali-coder449.github.io/visa/",
+  "homepage": "https://ali-coder449.github.io/site/",
   "bugs": {
-    "url": "https://github.com/Ali-coder449/visa/issues"
+    "url": "https://github.com/Ali-coder449/site/issues"
   },
   "scripts": {
     "dev": "vite",
