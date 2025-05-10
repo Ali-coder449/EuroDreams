@@ -1,16 +1,8 @@
 {
-  "name": "visa-consultancy",
+  "name": "EuroDream",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ali-coder449/site.git"
-  },
-  "homepage": "https://ali-coder449.github.io/site/",
-  "bugs": {
-    "url": "https://github.com/Ali-coder449/site/issues"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
