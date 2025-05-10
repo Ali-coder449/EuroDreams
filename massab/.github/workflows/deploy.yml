@@ -1,0 +1,52 @@
+name: Deploy Site Application
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install Dependencies
+        run: npm ci
+      
+      - name: Build Project
+        run: npm run build
+      
+      - name: Setup Deployment Files
+        run: |
+          # Create necessary files with proper encoding
+          touch ./dist/.nojekyll
+          echo "node_modules/
+          massab/node_modules/
+          **/node_modules/" > ./dist/.gitignore
+          
+          echo "exclude:
+            - node_modules
+            - massab/node_modules
+            - \"*.log\"
+            - \"*.md\"
+            - README.md
+            - CHANGELOG.md
+            - LICENSE
+            - package.json
+            - package-lock.json" > ./dist/_config.yml
+      
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist
+          branch: gh-pages
+          clean: true 

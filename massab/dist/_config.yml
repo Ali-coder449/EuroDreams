@@ -1,0 +1,10 @@
+﻿exclude:
+  - node_modules
+  - massab/node_modules
+  - "*.log"
+  - "*.md"
+  - README.md
+  - CHANGELOG.md
+  - LICENSE
+  - package.json
+  - package-lock.json
